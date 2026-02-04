@@ -1,0 +1,38 @@
+// prgm4.c Program to resize previously allocated memory using realloc()
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr;
+    int n, new_n, i;
+
+    printf("Enter initial number of elements: ");
+    scanf("%d", &n);
+    ptr = (int *)malloc(n * sizeof(int));
+    if (ptr == NULL) {
+        printf("Memory allocation failed");
+        return 1;
+    }
+    for (i = 0; i < n; i++) {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &ptr[i]);
+    }
+
+    printf("\nEnter new number of elements: ");
+    scanf("%d", &new_n);
+    ptr = (int *)realloc(ptr, new_n * sizeof(int));
+    if (ptr == NULL) {
+        printf("Memory reallocation failed");
+        return 1;
+    }
+    for (i = n; i < new_n; i++) {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &ptr[i]);
+    }
+    printf("\nFinal values after realloc:\n");
+    for (i = 0; i < new_n; i++) {
+        printf("%d ", ptr[i]);
+    }
+
+    return 0;
+}
