@@ -1,0 +1,32 @@
+//prgm1b: program to use typedef with structure
+#include <stdio.h>
+
+typedef struct {
+    float math;
+    float sanskrit;
+    float urdu;
+} subject;
+
+typedef struct {
+    int id;
+    char name[20];
+    subject marks;
+} student;
+
+int main() {
+
+    student s1 = {101, "AAA", {50, 60, 70}};
+    student s2 = {102, "BBB", {60, 70, 80}};
+
+    printf("Student 1 Details\n");
+    printf("ID NO: %d\nName: %s\n", s1.id, s1.name);
+    printf("Marks:\nMath: %.2f\nSanskrit: %.2f\nUrdu: %.2f\n\n",
+           s1.marks.math, s1.marks.sanskrit, s1.marks.urdu);
+
+    printf("Student 2 Details\n");
+    printf("ID NO: %d\nName: %s\n", s2.id, s2.name);
+    printf("Marks:\nMath: %.2f\nSanskrit: %.2f\nUrdu: %.2f\n",
+           s2.marks.math, s2.marks.sanskrit, s2.marks.urdu);
+
+    return 0;
+}
