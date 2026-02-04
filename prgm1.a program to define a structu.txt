@@ -1,0 +1,30 @@
+//prgm1.a program to define a structure and access it members
+#include <stdio.h>
+
+struct student {
+    int id;
+    char name[20];
+    float marks;
+};
+
+int main() {
+
+    struct student s1 ={101,"AAA",95.5};
+    struct student s2 ={101,"BBB",90};
+
+
+  
+    printf("Student 1 Details \n");
+    printf("ID NO:%d",s1.id);
+     printf("NAME: %s",s1.name);
+      printf("Marks :%f\n",s1.marks);
+      
+      
+    printf("Student 2 Details\n");
+       printf("ID NO :%d",s2.id);
+     printf("NAME :%s",s2.name);
+      printf("Marks :%f",s2.marks); 
+      
+
+    return 0;
+}
