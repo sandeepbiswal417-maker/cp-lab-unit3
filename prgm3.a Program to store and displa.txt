@@ -1,0 +1,33 @@
+//prgm3.a Program to store and display multiple student records using array of structures
+#include <stdio.h>
+struct Student {
+    int roll;
+    char name[20];
+    float marks;
+};
+
+int main() {
+    struct Student s[3];
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        printf("Enter roll number: ");
+        scanf("%d", &s[i].roll);
+
+        printf("Enter name: ");
+        scanf("%s", s[i].name);
+
+        printf("Enter marks: ");
+        scanf("%f", &s[i].marks);
+    }
+
+    printf("\nStudent Records\n");
+
+    for (i = 0; i < 3; i++) {
+        printf("Roll: %d\n", s[i].roll);
+        printf("Name: %s\n", s[i].name);
+        printf("Marks: %.2f\n\n", s[i].marks);
+    }
+
+    return 0;
+}
